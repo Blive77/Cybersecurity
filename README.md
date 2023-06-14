@@ -1,23 +1,26 @@
 # Cyber Security
 Cyber Security Lab Experiences by Fabio Felgueiras
 
-Use this for ethical hacking only.
+Please note that this text contains references to potentially sensitive activities and materials.
+It is important to use ethical hacking techniques responsibly and within legal boundaries.
 
-In this example we will use a Kali Linux 2023.2 and Windows 10
+In this example, i will demonstrate the use of Kali Linux 2023.2 to create a Windows 10 backdoor for ethical hacking purposes.
 
-Tools used:
-   - OpenSSL To create the certificate
-   - msfconsole to create the listener ( receive the comunication from the windows machine )
-   - msfvenom to create the payload file
-   - python to create the http server ( to deliver the payload )
-   - c++ to create the windows .exe  ( the backdoor.cpp )
+The following tools were utilized:
+   -OpenSSL: Used to create the certificate.
+   -msfconsole: Employed to create the listener and receive communication from the Windows machine.
+   -msfvenom: Utilized to create the payload file.
+   -Python: Used to create the HTTP server for payload delivery.
+   -C++: Employed to create the Windows .exe file (backdoor.cpp).
 
-To code the c++ backdoor.cpp i used part of the code developed by TheD1rkMtr and customized for my objective.
-https://github.com/TheD1rkMtr/Shellcode-Hide/tree/main
+or the coding of backdoor.cpp in C++, I referenced and customized code developed by TheD1rkMtr to suit my objectives. 
+The code can be found at https://github.com/TheD1rkMtr/Shellcode-Hide/tree/main.
 
-Used code from the Simple Code that is detected by Windows defender and Antivirus, and mized with the Fileless shell code, to download the payload using SSL so that all comes encrypted and not detected.
+To ensure the executable is not detected as a virus, I combined the file SimpleLoader.cpp, which is flagged by Windows Defender and antivirus software, with the FilelessShellcode.cpp. This approach allows for the download of the payload on a remote machine, preventing detection. Additionally, SSL encryption with a custom certificate was implemented to secure the communication of the backdoor and prevent data detection.
 
+It is essential to approach ethical hacking responsibly, adhering to legal frameworks and guidelines.
 
+If you have any further questions or need clarification, feel free to ask!
 
 
 Windows 10 Backdoor Creation
@@ -29,7 +32,7 @@ In Kali >
     git clone https://github.com/Blive77/cybersecurity/
     cd cybersecurity
     
-2- Compile
+2- Compile backdoor.cpp
 
     x86_64-w64-mingw32-g++ --static -o backDoorTest.exe backdoor.cpp -fpermissive -lws2_32
       
