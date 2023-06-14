@@ -1,9 +1,19 @@
 # Cyber Security
 Cyber Security Lab Experiences by Fabio Felgueiras
-
 Use this for ethical hacking only 
 
+
 In this example we will use a Kali Linux 2023.2 and windows 10
+Tools used:
+-OpenSSL To create the certificate
+-msfConsole to create the listner
+-msfvenom to create the payload
+-python to create the http server
+-c++ to create the windows .exe 
+
+
+Windows 10 Backdoor 
+
 
 In Kali >
 
