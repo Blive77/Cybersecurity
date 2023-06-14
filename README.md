@@ -13,6 +13,9 @@ Tools used:
    - c++ to create the windows .exe  ( the backdoor.cpp )
 
 
+To code the c++ backdoor.cpp i used part of the code developed by TheD1rkMtr and customized for my objective.
+https://github.com/TheD1rkMtr/Shellcode-Hide/tree/main
+
 Windows 10 Backdoor Creation
 
 In Kali >
