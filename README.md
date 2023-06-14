@@ -1,5 +1,5 @@
-# cybersecurity
-Cybersecurity Lab Experiences by Fabio Felgueiras
+# Cyber Security
+Cyber Security Lab Experiences by Fabio Felgueiras
 
 Use this for ethical hacking only 
 
