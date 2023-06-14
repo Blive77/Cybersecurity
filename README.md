@@ -7,11 +7,11 @@ It is important to use ethical hacking techniques responsibly and within legal b
 In this example, i will demonstrate the use of Kali Linux 2023.2 to create a Windows 10 backdoor for ethical hacking purposes.
 
 The following tools were utilized:
-   -OpenSSL: Used to create the certificate.
-   -msfconsole: Employed to create the listener and receive communication from the Windows machine.
-   -msfvenom: Utilized to create the payload file.
-   -Python: Used to create the HTTP server for payload delivery.
-   -C++: Employed to create the Windows .exe file (backdoor.cpp).
+   - OpenSSL: Used to create the certificate.
+   - msfconsole: Employed to create the listener and receive communication from the Windows machine.
+   - msfvenom: Utilized to create the payload file.
+   - Python: Used to create the HTTP server for payload delivery.
+   - C++: Employed to create the Windows .exe file (backdoor.cpp).
 
 or the coding of backdoor.cpp in C++, I referenced and customized code developed by TheD1rkMtr to suit my objectives. 
 The code can be found at https://github.com/TheD1rkMtr/Shellcode-Hide/tree/main.
