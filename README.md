@@ -18,7 +18,7 @@ The code can be found at https://github.com/TheD1rkMtr/Shellcode-Hide/tree/main.
 
 To ensure the executable is not detected as a virus, I combined the file SimpleLoader.cpp, which is flagged by Windows Defender and antivirus software, with the FilelessShellcode.cpp. This approach allows for the download of the payload on a remote machine, preventing detection. Additionally, SSL encryption with a custom certificate was implemented to secure the communication of the backdoor and prevent data detection.
 
-It is essential to approach ethical hacking responsibly, adhering to legal frameworks and guidelines.
+It is essential to approach ethical hacking responsibly, following legal frameworks and guidelines.
 
 If you have any further questions or need clarification, feel free to ask!
 
