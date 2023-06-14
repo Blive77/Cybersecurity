@@ -13,7 +13,7 @@ The following tools were utilized:
    - Python: Used to create the HTTP server for payload delivery.
    - C++: Employed to create the Windows .exe file (backdoor.cpp).
 
-or the coding of backdoor.cpp in C++, I referenced and customized code developed by TheD1rkMtr to suit my objectives. 
+For the coding of backdoor.cpp in C++, I referenced and customized code developed by TheD1rkMtr to suit my objectives. 
 The code can be found at https://github.com/TheD1rkMtr/Shellcode-Hide/tree/main.
 
 To ensure the executable is not detected as a virus, I combined the file SimpleLoader.cpp, which is flagged by Windows Defender and antivirus software, with the FilelessShellcode.cpp. This approach allows for the download of the payload on a remote machine, preventing detection. Additionally, SSL encryption with a custom certificate was implemented to secure the communication of the backdoor and prevent data detection.
