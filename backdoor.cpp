@@ -2,11 +2,6 @@
 #include <ws2tcpip.h>
 #include <windows.h>
 #include <stdio.h>
-
-#include <winsock2.h>
-#include <ws2tcpip.h>
-#include <windows.h>
-#include <stdio.h>
 #include <iostream>
 using namespace std;
 #pragma comment (lib, "ntdll")
