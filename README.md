@@ -3,7 +3,7 @@ Cyber Security Lab Experiences by Fabio Felgueiras
 
 Use this for ethical hacking only.
 
-In this example we will use a Kali Linux 2023.2 and windows 10
+In this example we will use a Kali Linux 2023.2 and Windows 10
 
 Tools used:
    - OpenSSL To create the certificate
