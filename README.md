@@ -6,6 +6,7 @@ Use this for ethical hacking only
 1- Download
 
     git clone https://github.com/Blive77/cybersecurity/
+    cd cybersecurity
     
 2- Compile
 
