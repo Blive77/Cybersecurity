@@ -5,7 +5,7 @@ Use this for ethical hacking only
 
 1- Download
 
-    git clone https://github.com/Blive77/cybersecurity/blob/main/backdoor.cpp
+    git clone https://github.com/Blive77/cybersecurity/
     
 2- Compile
 
