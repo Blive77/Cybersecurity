@@ -12,9 +12,13 @@ Tools used:
    - python to create the http server ( to deliver the payload )
    - c++ to create the windows .exe  ( the backdoor.cpp )
 
-
 To code the c++ backdoor.cpp i used part of the code developed by TheD1rkMtr and customized for my objective.
 https://github.com/TheD1rkMtr/Shellcode-Hide/tree/main
+
+Used code from the Simple Code that is detected by Windows defender and Antivirus, and mized with the Fileless shell code, to download the payload using SSL so that all comes encrypted and not detected.
+
+
+
 
 Windows 10 Backdoor Creation
 
