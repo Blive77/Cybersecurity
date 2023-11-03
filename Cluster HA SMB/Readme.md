@@ -35,5 +35,5 @@ ssh root@Ip3
 
 Server1
 ```shell
-wget https://github.com/Blive77/Cybersecurity/edit/main/Cluster%20HA%20SMB/
+git clone https://github.com/Blive77/Cybersecurity/edit/main/Cluster%20HA%20SMB/
 ```  
