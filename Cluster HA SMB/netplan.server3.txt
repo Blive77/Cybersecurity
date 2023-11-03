@@ -1,1 +1,40 @@
+# This is the network config written by 'subiquity'
+network:
+  ethernets:
+    ens18:
+      addresses:
+      - 192.168.0.21/24
+      nameservers:
+        addresses:
+        - 8.8.8.8
+        - 1.1.1.1
+        search: []
+      routes:
+      - to: default
+        via: 192.168.0.1
+    ens19:
+      addresses:
+      - 192.168.0.22/24
+      nameservers:
+        addresses:
+        - 8.8.8.8
+        - 1.1.1.1
+        search: []
+    ens20:
+      addresses:
+      - 192.168.0.23/24
+      nameservers:
+        addresses:
+        - 8.8.8.8
+        - 1.1.1.1
+        search: []
+    ens21:
+      addresses:
+      - 192.168.0.24/24
+      nameservers:
+        addresses:
+        - 8.8.8.8
+        - 1.1.1.1
+        search: []
+  version: 2
 
