@@ -5,7 +5,7 @@ echo "##########################################"
 
 # Directory where the text files are located
 txt_dir="txt"
-
+ssh_password="123456"
 # List of server configuration files
 server_files=("netplan.server1.txt" "netplan.server2.txt" "netplan.server3.txt")
 server1_ips=()
@@ -31,18 +31,38 @@ done
 #echo "Server 2 IPs: ${server2_ips[@]}"
 #echo "Server 3 IPs: ${server3_ips[@]}"
 
-echo "[Server2 ${server2_ips[@]}] A Fazer Update ao Sistema"
-sshpass -p "$ssh_password" ssh root@"${server2_ips[@]}" 'sudo apt update -y && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt clean -y && sudo apt autoclean -y'
+ssh-keygen -R "${server1_ips[@]}"
+ssh-keygen -R "${server2_ips[@]}"
+ssh-keygen -R "${server3_ips[@]}"
 
-echo "[Server3 ${server3_ips[@]}] A Fazer Update ao Sistema"
-sshpass -p "$ssh_password" ssh root@"${server3_ips[@]}" 'sudo apt update -y && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt clean -y && sudo apt autoclean -y'
-
-echo "[Server1] A Fazer Update ao Sistema"
-sudo apt update -y && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt clean -y && sudo apt autoclean -y
+# Construct the command to run on the remote servers
+remote_command="sudo apt update -y && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt clean -y && sudo apt autoclean -y"
 
 echo "##########################################"
-echo "#         Cluster UDATE COMPLETO         #"
+echo "Server2 - ${server2_ips[@]}]           "
 echo "##########################################"
+
+output=$(sshpass -p "$ssh_password" ssh root@"${server2_ips[@]}" "$remote_command" )
+echo "$output"
+
+echo "##########################################"
+echo "Server3 - ${server3_ips[@]}]           "
+echo "##########################################"
+
+output=$(sshpass -p "$ssh_password" ssh root@"${server3_ips[@]}" "$remote_command" )
+echo "$output"
+
+echo "##########################################"
+echo "Server1 - ${server1_ips[@]}]           "
+echo "##########################################"
+
+output=$(sshpass -p "$ssh_password" ssh root@"${server1_ips[@]}" "$remote_command" )
+echo "$output"
+
+echo "##########################################"
+echo "#        Cluster UPDATE COMPLETO         #"
+echo "##########################################"
+
 
 
 
