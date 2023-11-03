@@ -1,6 +1,5 @@
 #### Config dos nodes para as instalação
 
-
 Server1, Server2, Server3
 **Configurar senha para o root**   
 ```shell
@@ -34,3 +33,7 @@ ssh root@Ip2
 ssh root@Ip3
 ```  
 
+Server1
+```shell
+wget https://github.com/Blive77/Cybersecurity/edit/main/Cluster%20HA%20SMB/
+```  
