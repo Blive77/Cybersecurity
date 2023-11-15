@@ -24,3 +24,25 @@ In the ever-evolving landscape of data management, GlusterFS emerges as a powerf
 
 In this manual, i will guide you through the process of installing, configuring, and utilizing GlusterFS to harness the full potential of distributed storage. Whether you are a system administrator, developer, or IT enthusiast, this manual aims to equip you with the knowledge and tools to effectively implement and manage GlusterFS in your environment. Let's embark on the journey of unlocking the power of scalable and distributed file storage with GlusterFS.
 
+## System Requirements
+
+Before initiating the installation process for GlusterFS, it is imperative to verify that your systems meet the specific hardware and software requirements outlined below:
+
+### Hardware Requirements:
+
+- **Storage:** Ensure an adequate amount of storage capacity on each node to accommodate your data storage needs. The actual storage requirements will depend on factors such as the volume of data, expected growth, and redundancy settings (if any).
+
+- **Memory (RAM):** Allocate a recommended amount of RAM to each node for optimal performance. As a general guideline, a minimum of 1 GB of RAM per terabyte of data is often suggested. Adjustments may be needed based on your workload and performance expectations.
+
+- **Processor:** GlusterFS benefits from a multicore processor for efficient parallel processing. Verify that the processors on your nodes meet or exceed the recommended specifications for GlusterFS. A modern multicore processor (e.g., dual-core or quad-core) is generally suitable.
+
+### Software Requirements:
+
+- **Operating System:** GlusterFS is compatible with various Linux distributions. Ensure that your nodes are running a supported version of Linux. Commonly supported distributions include CentOS, Ubuntu, Debian, and others. Refer to the GlusterFS documentation for the specific versions that are currently supported.
+
+- **Network:** A reliable and low-latency network connection between nodes is crucial for GlusterFS performance. Confirm that your network infrastructure meets the recommended standards for communication between nodes. This includes verifying proper DNS resolution, minimal latency, and adequate bandwidth.
+
+- **Dependencies:** Install the necessary dependencies and libraries required for GlusterFS to function correctly. These dependencies may include specific versions of software packages or libraries. Check the GlusterFS documentation for a detailed list of dependencies based on your chosen Linux distribution.
+
+By meticulously ensuring that your systems align with these hardware and software requirements, you set the stage for a smooth installation and configuration of GlusterFS. Taking the time to meet these specifications will contribute to the stability and efficiency of your distributed file system.
+
