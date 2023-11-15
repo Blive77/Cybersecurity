@@ -46,3 +46,16 @@ Before initiating the installation process for GlusterFS, it is imperative to ve
 
 By meticulously ensuring that your systems align with these hardware and software requirements, you set the stage for a smooth installation and configuration of GlusterFS. Taking the time to meet these specifications will contribute to the stability and efficiency of your distributed file system.
 
+## Download and Install
+
+In this case i will be instaling on a 3 nodes of ubuntu 24.04.
+Once you've confirmed that your system meets the necessary requirements, you can proceed with downloading and installing GlusterFS on Ubuntu 22.04. 
+Follow these steps:
+
+### 1. Install GlusterFS:
+
+Open a terminal and run the following commands:
+
+```bash
+sudo apt update
+sudo apt install -y glusterfs-server
