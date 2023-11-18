@@ -16,9 +16,7 @@ gluster volume set test-volume performance.cache-size 256MB
 
 The table below outlines various volume options, providing descriptions and default values:
 
-# GlusterFS Volume Options
-
-# GlusterFS Volume Options
+## GlusterFS Volume Options
 
 | Option                             | Description                                                                                                   | Default Value                 | Available Options                                   |
 |------------------------------------|---------------------------------------------------------------------------------------------------------------|-------------------------------|-----------------------------------------------------|
