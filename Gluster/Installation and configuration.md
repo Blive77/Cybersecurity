@@ -25,30 +25,60 @@ sudo gluster peer probe server1.local
 sudo gluster peer probe server2.local
 sudo gluster peer probe server3.local
 ```
-### Create a Gluster Volume
+### Configure GlusterFS Storage
 It is recomended to have the volume mounted to a separate device, in this case i will be mountung to device /dev/sdb.
+```bash
+fdisk /dev/sdb
+```
+Follow this steps:
+```bash
+Welcome to fdisk (util-linux 2.27.1).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
 
-### Mount the device
+Device does not contain a recognized partition table.
+Created a new DOS disklabel with disk identifier 0x96eae0dd.
 
-This is done on the 3 nodes.
+Command (m for help): n
+Partition type
+   p   primary (0 primary, 0 extended, 4 free)
+   e   extended (container for logical partitions)
+Select (default p): p
+Partition number (1-4, default 1): 
+First sector (2048-4194303, default 2048): 
+Last sector, +sectors or +size{K,M,G,T,P} (2048-4194303, default 4194303): 
 
+Created a new partition 1 of type 'Linux' and of size 2 GiB.
+
+Command (m for help): w
+The partition table has been altered.
+Calling ioctl() to re-read partition table.
+Syncing disks.
+```
+
+Now e format the created partition
 ```bash
 sudo mkdir /data
-sudo parted -s /dev/sdb mklabel gpt mkpart primary ext4 0% 100%
+sudo mkfs.ext4 /dev/sdb1
 ```
-Next we will use Gfs2 for a file system optimized for cluster performance.
-
- ```bash
-sudo apt-get install gfs2-utils
-sudo mkfs.gfs2 -j3 -p lock_dlm -t smbcluster:gfs2 /dev/sdb1
+```bash
+sudo nano /etc/fstab
 ```
+Add this line:
+```bash
+/dev/sdb1 /glusterfs ext4 defaults 0 
+```
+```bash
+sudo mount -a
+```
+### Create the Volume
+To create a volume all the following commands are inserted in one of the nodes.
 
-To create a volume all the following commands is inserted in one of the nodes.
+This volume can be create in many diferent configurations, here are some of them with a brief explanation.
 
 ## Replicated Volume with 3 Nodes (Each Node Contains a Full Replica):
 
 This configuration ensures that each node has a complete copy of the data for redundancy.
-
 ```bash
 sudo gluster volume create vol_replica replica 3 transport tcp \
 server1.local:/data/replica \
@@ -67,6 +97,7 @@ server2.local:/data/distributed \
 server3.local:/data/distributed \
 force
 ```
+
 ## Striped Volume:
 
 Distributes data in stripes across nodes, improving performance by parallelizing I/O operations.
@@ -100,6 +131,7 @@ server2.local:/data/arbiter \
 server3.local:/data/arbiter \
 force
 ```
+
 ## Distributed Striped Volume:
 
 Combines distribution and striping, distributing striped data across nodes.
