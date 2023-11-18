@@ -78,7 +78,7 @@ This volume can be create in many diferent configurations, here are some of them
 
 ## Replicated Volume with 3 Nodes (Each Node Contains a Full Replica):
 
-This configuration ensures that each node has a complete copy of the data for redundancy.
+This configuration ensures that each node has a complete copy of the data for redundancy. And this is the one i used in the High availability cluster project.
 ```bash
 sudo gluster volume create vol_replica replica 3 transport tcp \
 server1.local:/data/replica \
