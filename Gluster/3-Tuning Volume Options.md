@@ -18,6 +18,8 @@ The table below outlines various volume options, providing descriptions and defa
 
 # GlusterFS Volume Options
 
+# GlusterFS Volume Options
+
 | Option                             | Description                                                                                                   | Default Value                 | Available Options                                   |
 |------------------------------------|---------------------------------------------------------------------------------------------------------------|-------------------------------|-----------------------------------------------------|
 | auth.allow                         | IP addresses of the clients allowed to access the volume.                                                     | * (allow all)                 | Valid IP address with wildcards (e.g., 192.168.1.*) |
@@ -51,4 +53,17 @@ The table below outlines various volume options, providing descriptions and defa
 | nfs.rpc-auth-reject\<IP-Addresses>   | Rejects a comma-separated list of addresses and/or hostnames from connecting to the server.                   | Reject All                    | IP address or Host name                             |
 | nfs.ports-insecure                  | Allows client connections from unprivileged ports.                                                           | Off                           | On/Off                                              |
 | nfs.addr-namelookup                | Turns off name lookup for incoming client connections.                                                        | On                            | On/Off                                              |
-| nfs.register-with-portmap           | Prevents more than one Gluster NFS server from registering with portmap service.
+| nfs.register-with-portmap           | Prevents more than one Gluster NFS server from registering with portmap service.                             | On                            | On/Off                                              |
+| nfs.port \<PORT-NUMBER>              | Associates Gluster NFS with a non-default port number.                                                       | NA                            | 38465-38467                                        |
+| nfs.disable                         | Turns off exporting the volume by NFS.                                                                       | Off                           | On/Off                                              |
+| performance.write-behind-window-size | Size of the per-file write-behind buffer.                                                                   | 1MB                           | Write-behind cache size                            |
+| performance.io-thread-count          | Number of threads in IO threads translator.                                                                 | 16                            | 0-65                                               |
+| performance.flush-behind             | If set ON, instructs write-behind translator to perform flush in the background.                           | On                            | On/Off                                              |
+| performance.cache-max-file-size      | Maximum file size cached by the io-cache translator.                                                         | 2 ^ 64 -1 bytes               | Size in bytes                                      |
+| performance.cache-min-file-size      | Minimum file size cached by the io-cache translator.                                                         | 0B                            | Size in bytes                                      |
+| performance.cache-refresh-timeout    | Retains cached data for a file till 'cache-refresh-timeout' seconds, after which data re-validation occurs. | 1s                            | 0-61 secs                                          |
+| performance.cache-size               | Size of the read cache.                                                                                    | 32 MB                         | Size in bytes                                      |
+| server.allow-insecure                | Allows client connections from unprivileged ports.                                                           | On                            | On/Off                                              |
+| server.grace-timeout                | Duration for the lock state to be maintained on the server after a network disconnection.                  | 10                            | 10 - 1800 secs                                      |
+| server.statedump-path               | Location of the state dump file.                                                                           | tmp directory of the brick    | New directory path                                 |
+| storage.health-check-interval       | Seconds between health-checks on the filesystem used for the brick(s).                                      | tmp directory of the brick    | New directory path                                 |
