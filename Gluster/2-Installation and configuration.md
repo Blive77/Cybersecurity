@@ -72,7 +72,7 @@ Add this line:
 sudo mount -a
 ```
 ### Create the Volume
-To create a volume all the following commands are inserted in one of the nodes.
+The volume must be created in one of the cluster node.
 
 This volume can be create in many diferent configurations, here are some of them with a brief explanation.
 
