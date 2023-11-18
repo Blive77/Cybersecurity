@@ -4,9 +4,9 @@ In this case i will be instaling on a cluster of 3 nodes of ubuntu 24.04.
 Once you've confirmed that your system meets the necessary requirements, you can proceed with downloading and installing GlusterFS on Ubuntu 22.04. 
 
 /etc/hosts File on the 3 Servers:
-*192.168.0.11 server1.local*
-*192.168.0.21 server2.local*
-*192.168.0.31 server3.local*
+192.168.0.11 server1.local
+192.168.0.21 server2.local
+192.168.0.31 server3.local
 
 ### 1. Install GlusterFS:
 
