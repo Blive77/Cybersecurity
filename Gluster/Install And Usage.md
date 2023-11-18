@@ -16,14 +16,14 @@ Open a terminal and run the following commands:
 sudo apt update
 sudo apt install -y glusterfs-server
 sudo systemctl enable --now glusterd
-
+```
 ### Add nodes to the Gluster cluster
 
 ```bash
 sudo gluster peer probe server1.local
 sudo gluster peer probe server2.local
 sudo gluster peer probe server3.local
-
+```
 ### Create a Gluster Volume
 It is recomended to have the volume mounted to a separate device, in this case i will be mountung to device /dev/sdb.
 
@@ -34,13 +34,13 @@ This is done on the 3 nodes.
 ```bash
 sudo mkdir /data
 sudo parted -s /dev/sdb mklabel gpt mkpart primary ext4 0% 100%
-
+```
 Next we will use Gfs2 for a file system optimized for cluster performance.
 
  ```bash
 sudo apt-get install gfs2-utils
 sudo mkfs.gfs2 -j3 -p lock_dlm -t smbcluster:gfs2 /dev/sdb1
-
+```
 
 To create a volume all the following commands is inserted in one of the nodes.
 
@@ -54,7 +54,7 @@ server1.local:/data/replica \
 server2.local:/data/replica \
 server3.local:/data/replica \
 force
-
+```
 ## Distributed Volume:
 
 Distributes data across the nodes, providing a simple way to scale capacity. Each node contributes its local storage.
@@ -65,7 +65,7 @@ server1.local:/data/distributed \
 server2.local:/data/distributed \
 server3.local:/data/distributed \
 force
-
+```
 ## Striped Volume:
 
 Distributes data in stripes across nodes, improving performance by parallelizing I/O operations.
@@ -76,7 +76,7 @@ server1.local:/data/striped \
 server2.local:/data/striped \
 server3.local:/data/striped \
 force
-
+```
 ## Distributed Replicated Volume:
 
 Combines distribution and replication, distributing data across nodes while maintaining redundancy.
@@ -87,7 +87,7 @@ server1.local:/data/dist_replica \
 server2.local:/data/dist_replica \
 server3.local:/data/dist_replica \
 force
-
+```
 ## Arbiter Volume:
 
 Uses an arbiter server to store only file metadata, conserving storage space.
@@ -98,7 +98,7 @@ server1.local:/data/arbiter \
 server2.local:/data/arbiter \
 server3.local:/data/arbiter \
 force
-
+```
 ## Distributed Striped Volume:
 
 Combines distribution and striping, distributing striped data across nodes.
@@ -109,3 +109,4 @@ server1.local:/data/dist_striped \
 server2.local:/data/dist_striped \
 server3.local:/data/dist_striped \
 force
+```
