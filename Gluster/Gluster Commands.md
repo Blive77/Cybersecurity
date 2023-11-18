@@ -1,6 +1,6 @@
 Here's a list of some useful GlusterFS commands that can help you manage and monitor your GlusterFS cluster:
 
-##Cluster and Volume Information:
+###Cluster and Volume Information:
 
 Check if Gluster daemon is running:
 ```bash
@@ -17,7 +17,7 @@ Check the status of a specific volume:
 gluster volume status <volume_name>
 ```
 
-##Volume Management:
+###Volume Management:
 
 Create a new replicated volume:
 ```bash
@@ -38,7 +38,7 @@ Delete a volume:
 gluster volume delete <volume_name>
 ```
 
-##Brick and Peer Operations:
+###Brick and Peer Operations:
 
 Add a brick to a volume:
 ```bash
@@ -76,7 +76,7 @@ Check for split-brain scenarios:
 gluster volume heal <volume_name> split-brain
 ```
 
-##Client Mounts:
+###Client Mounts:
 
 Mount a GlusterFS volume on a client:
 ```bash
