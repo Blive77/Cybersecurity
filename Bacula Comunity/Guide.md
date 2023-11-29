@@ -8,7 +8,7 @@ Bacula Community on Ubuntu 22.04. Bacula is a powerful open-source backup and re
 ## Installation Steps
 
 1. **Update System Packages:**
-   Ensure your system is up-to-date by running:
+  - Ensure your system is up-to-date by running:
      ```bash
      sudo apt update && sudo apt upgrade
      ```
