@@ -13,13 +13,12 @@ Bacula Community on Ubuntu 22.04. Bacula is a powerful open-source backup and re
      sudo apt update && sudo apt upgrade
      ```
 2. **Additional Package Installation:**
-   You must install the following package:
+   -You must install the following package:
      ```bash
      apt-get install apt-transport-https
      ```
 3. **Import the GPG key:**
-   The packages are signed with a GPG key signature that you can find at the root of
-your download area:
+   -The packages are signed with a GPG key signature that you can find at the root of your download area:
     ```bash
     sudo cd /tmp &&
     wget https://www.bacula.org/downloads/Bacula-4096-Distribution-Verification-key.asc &&
@@ -27,17 +26,17 @@ your download area:
     rm Bacula-4096-Distribution-Verification-key.asc &&
     ```
 4. **apt Package Manager Configuration:**
-    Lets check, binay version in currently the version is 13.03:
+   - Lets check, binay version in currently the version is 13.03:
     https://bacula.org/packages/5f1e8eefd1016/debs/
      - We installing in Ubuntu 22.04 jammy
      - Current version of bacula community
    
-    Add the following entries to a new file called:
+    - Add the following entries to a new file called:
     ```bash
     sudo /etc/apt/sources.list.d/Bacula-Community.list
     ```
 
-    Adapting the URL to point to your Download Area. Also, please pay careful attention
+    - Adapting the URL to point to your Download Area. Also, please pay careful attention
     to use the correct Bacula Community version and platform in the URL.
     ```
     # Bacula Community
@@ -59,19 +58,19 @@ your download area:
     ```
    
 5. **Package Installation**
-   Run apt-get update to update the package system and verify your Bacula repositories are correctly configured.
+   - Run apt-get update to update the package system and verify your Bacula repositories are correctly configured.
     ```bash
      sudo apt update && sudo apt upgrade
     ```
      
 6. **Install the Database Engine**
-   If PostgreSQL is not already installed, please run this command to install it
+   - If PostgreSQL is not already installed, please run this command to install it
     ```bash
      apt-get install postgresql postgresql-client
     ```
 
 8. **Install the Bacula Community Software:**
-    Run the following command to create the Bacula database:
+    - Run the following command to create the Bacula database:
     ```bash
      apt-get install bacula-postgresql
     ```
@@ -81,11 +80,11 @@ your download area:
     continue the installation from there
 
 9. **Final configuration:**
-    Start PostgreSQL database:
+    - Start PostgreSQL database:
     ```bash
      systemctl start postgresql.service
     ```
-    Please run the following commands to create the database and grant ownership:
+    - Please run the following commands to create the database and grant ownership:
     ```bash
      su - postgres
     /opt/bacula/scripts/create_postgresql_database
@@ -101,12 +100,12 @@ your download area:
     ```
 
 10. **Webmin integration:**
-    Install PostgreSQL database driver for the DBI module:
+    - Install PostgreSQL database driver for the DBI module:
     ```bash
     Search for module "DBD::Pg" in menu, Tool\Perl modules
     ```
     
-    Also Change the 'local' entry for Unix domain socket connections from peer to md5 in the File:
+    - Also Change the 'local' entry for Unix domain socket connections from peer to md5 in the File:
     ```bash
     sudo nano /etc/postgresql/14/main/pg_hba.conf
     ```
@@ -115,7 +114,6 @@ your download area:
         host    all         all                 md5
     ```
     
-
 
 # Its Done
 Congratulations! You have successfully installed Bacula Community on Ubuntu 22.04. Customize your backup strategy using the Bacula Console for effective data protection.
