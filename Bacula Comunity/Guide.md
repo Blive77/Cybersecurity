@@ -106,8 +106,10 @@ your download area:
     Search for module "DBD::Pg" in menu, Tool\Perl modules
     ```
     Also Change the 'local' entry for Unix domain socket connections from peer to md5 in the File:
+     ```
     Change to:
         host    all         all                 md5
+      ```
     
     ```bash
     sudo nano /etc/postgresql/14/main/pg_hba.conf
