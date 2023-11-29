@@ -43,15 +43,15 @@ Bacula Community on Ubuntu 22.04. Bacula is a powerful open-source backup and re
     deb [arch=amd64] https://www.bacula.org/packages/@access-key@/debs/@bacula-version@ @ubuntu-version@ main
     ``` 
       Where:
-   ```
-      ◾ @access-key@ refers to your personalized area string. This is the trailing
-      path component sent in the registration email. Copying the URI from that
-      email will be one of the simplest ways to set this up correctly.
-      ◾ @bacula-version@ should be replaced by the version of Bacula Community
-      you are using (e. g. 13.0.1).
-      ◾ @ubuntu-version@ is the code name of the distribution (“xenial” or “bionic”,
-      for example).
-    ```
+      ```
+        ◾ @access-key@ refers to your personalized area string. This is the trailing
+        path component sent in the registration email. Copying the URI from that
+        email will be one of the simplest ways to set this up correctly.
+        ◾ @bacula-version@ should be replaced by the version of Bacula Community
+        you are using (e. g. 13.0.3).
+        ◾ @ubuntu-version@ is the code name of the distribution (“xenial” or “jammy”,
+        for example).
+      ```
     Complete example:
     ```
     #Bacula Community
