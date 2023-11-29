@@ -1,4 +1,4 @@
-Guide: Installing Bacula Community on Ubuntu 22.04 and Integrating with Webmin
+#Guide: Installing Bacula Community on Ubuntu 22.04 and Integrating with Webmin
 
 
 ## Introduction
