@@ -1,4 +1,4 @@
-#Guide: Installing Bacula Community on Ubuntu 22.04 and Integrating with Webmin
+# Guide: Installing Bacula Community on Ubuntu 22.04 and Integrating with Webmin
 
 
 ## Introduction
@@ -113,5 +113,5 @@ your download area:
     sudo nano /etc/postgresql/14/main/pg_hba.conf
     ```
 
-#Its Done
+# Its Done
 Congratulations! You have successfully installed Bacula Community on Ubuntu 22.04. Customize your backup strategy using the Bacula Console for effective data protection.
