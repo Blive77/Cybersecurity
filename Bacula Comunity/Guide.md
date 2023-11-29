@@ -105,15 +105,17 @@ your download area:
     ```bash
     Search for module "DBD::Pg" in menu, Tool\Perl modules
     ```
-    Also Change the 'local' entry for Unix domain socket connections from peer to md5 in the File:
-     ```
-    Change to:
-        host    all         all                 md5
-      ```
     
+    Also Change the 'local' entry for Unix domain socket connections from peer to md5 in the File:
     ```bash
     sudo nano /etc/postgresql/14/main/pg_hba.conf
     ```
+    ```
+    Change to:
+        host    all         all                 md5
+    ```
+    
+
 
 # Its Done
 Congratulations! You have successfully installed Bacula Community on Ubuntu 22.04. Customize your backup strategy using the Bacula Console for effective data protection.
