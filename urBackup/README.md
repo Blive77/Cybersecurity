@@ -120,3 +120,8 @@ to:
 RESTORE=server-confirms
 ```
 
+## Conclusion:
+
+In wrapping up, this guide has walked you through the installation and setup of UrBackup in a Linux 22.04 on a high-availability environment. With the usage of Server 3 for all backups, you've streamlined your backup strategy. The guide covers everything from drive preparation to client installations.
+
+By following these steps, you've established a robust and secure backup system, ensuring the protection of your critical data. Activate the "Restore File" button for added flexibility in file recovery. Implement these measures to fortify your network against potential data loss.
